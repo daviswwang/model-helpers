@@ -1,0 +1,28 @@
+{
+  "name": "daviswwang/model-helpers",
+  "description": "hyperf model-helpers",
+  "license": "MIT",
+  "keywords": [
+    "hyperf",
+    "helpers"
+  ],
+  "authors": [
+    {
+      "name": "daviswwang",
+      "email": "130086230@qq.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Daviswwang\\ModelHelpers\\": "./src/"
+    }
+  },
+  "require": {
+    "php": ">=7.1.3"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
+}
