@@ -8,9 +8,9 @@
 
 namespace Daviswwang\ModelHelpers\Exception;
 
-use Hyperf\Server\Exception\ServerException;
+//use Hyperf\Server\Exception\ServerException;
 
-class ApiException extends ServerException
+class ApiException
 {
 
 }

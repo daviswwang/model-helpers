@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Daviswwang\ModelHelpers;
 
-use Daviswwang\ModelHelpers\Exception\ApiException;
+//use Daviswwang\ModelHelpers\Exception\ApiException;
 use App\Utils\Redis;
 use Carbon\Carbon;
 use Hyperf\Utils\Arr;
@@ -86,7 +86,7 @@ trait ModelHelpers
             Redis::set($key, 'Lock', 10);
             return $key;
         } else {
-            throw new ApiException('10秒内请勿重复提交此用户信息');
+//            throw new ApiException('10秒内请勿重复提交此用户信息');
         }
     }
 
