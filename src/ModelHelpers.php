@@ -14,6 +14,8 @@ namespace Daviswwang\ModelHelpers;
 use App\Utils\Redis;
 use Carbon\Carbon;
 use Hyperf\Utils\Arr;
+use Hyperf\DbConnection\Db;
+
 
 trait ModelHelpers
 {
@@ -163,5 +165,15 @@ trait ModelHelpers
         }
 
         return $results;
+    }
+
+    public function getMemberInfoByContract($contractCode, $contract_type = 1)
+    {
+        return Db::table('ba_member_info')
+            ->leftJoin('ba_member_contract', 'ba_member_contract.member_code', '=', 'ba_member_info.member_code')
+            ->where('ba_member_contract.contract_code', $contractCode)
+            ->where('ba_member_contract.contract_type', $contract_type)
+            ->select('ba_member_info.*')
+            ->first();
     }
 }
