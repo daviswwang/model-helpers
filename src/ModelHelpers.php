@@ -167,12 +167,12 @@ trait ModelHelpers
         return $results;
     }
 
-    public function getMemberInfoByContract($contractCode, $contract_type = 1)
+    public function getMemberInfoByContract($contractCode, $contract_type = '')
     {
         return Db::table('ba_member_info')
             ->leftJoin('ba_member_contract', 'ba_member_contract.member_code', '=', 'ba_member_info.member_code')
             ->where('ba_member_contract.contract_code', $contractCode)
-            ->where('ba_member_contract.contract_type', $contract_type)
+            ->where('ba_member_contract.contract_type', $contract_type ?: (new static())::MARK)
             ->select('ba_member_info.*')
             ->first();
     }
