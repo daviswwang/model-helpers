@@ -6,7 +6,7 @@
  * Time: 15:47
  */
 
-namespace Daviswwang\ModelHelpers\Exception;
+namespace Daviswwang\ModelHelpers\Exceptions;
 
 //use Hyperf\Server\Exception\ServerException;
 

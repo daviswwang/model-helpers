@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Daviswwang\ModelHelpers;
 
-//use Daviswwang\ModelHelpers\Exception\ApiException;
+//use Daviswwang\ModelHelpers\Exceptions\ApiException;
 use App\Utils\Redis;
 use Carbon\Carbon;
 use Hyperf\Utils\Arr;
