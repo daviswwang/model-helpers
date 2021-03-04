@@ -125,6 +125,8 @@ trait ModelHelpers
         if ($data->quantity > 0) {
             $rest_qty = ($data->quantity - $data->bespeak_qty);
 
+            if ($rest_qty == $data->quantity) return $data->fact_price;
+
             $rest_price = bcmul(strval($rest_qty), strval(bcdiv(strval($data->fact_price), strval($data->quantity), 4)), 2);
         } elseif ($data->item_type == 2) {
             //按时
