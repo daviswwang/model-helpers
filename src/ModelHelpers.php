@@ -10,11 +10,12 @@ declare(strict_types=1);
 
 namespace Daviswwang\ModelHelpers;
 
-use Daviswwang\ModelHelpers\Exceptions\ApiException;
+//use Daviswwang\ModelHelpers\Exceptions\ApiException;
 use App\Utils\Redis;
 use Carbon\Carbon;
 use Hyperf\Utils\Arr;
 use Hyperf\DbConnection\Db;
+use App\Exception\ApiException;
 
 
 trait ModelHelpers
