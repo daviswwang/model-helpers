@@ -143,7 +143,10 @@ trait ModelHelpers
 
             $allDay = Carbon::instance($beginTime)->diff($endTime)->days;
 
-            $rest_price = bcmul(strval($diffDays), strval(bcdiv(strval($data->fact_price), strval($allDay), 4)), 2);
+            if ($allDay == 0 || (strtotime($data->begin_date) > strtotime($data->end_date)))
+                $rest_price = 0;
+            else
+                $rest_price = bcmul(strval($diffDays), strval(bcdiv(strval($data->fact_price), strval($allDay), 4)), 2);
         } else {
             $rest_price = 0;
         }
